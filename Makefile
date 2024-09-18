@@ -20,19 +20,19 @@ go.build.amd64: ## Build amd64 binary
 	GOARCH=amd64 go build -o echo-server.amd64 ./
 
 docker.build: ## Build docker image
-	docker buildx build --platform linux/amd64,linux/arm64 --output="type=image" --tag dkapanidis/echo-server .
+	docker buildx build --platform linux/amd64,linux/arm64 --output="type=image" --tag ghcr.io/dkapanidis/echo-server .
 
 docker.run.amd64: ## Run docker in arm64
-	docker run --platform linux/amd64 -p 5678:5678 dkapanidis/echo-server
+	docker run --platform linux/amd64 -p 5678:5678 ghcr.io/dkapanidis/echo-server
 
 docker.run.arm64: ## Run docker in arm64
-	docker run --platform linux/arm64 -p 5678:5678 dkapanidis/echo-server
+	docker run --platform linux/arm64 -p 5678:5678 ghcr.io/dkapanidis/echo-server
 
 docker.push: ## Push docker image to remote registry
-	docker buildx build --platform linux/amd64,linux/arm64 --push --tag dkapanidis/echo-server .
+	docker buildx build --platform linux/amd64,linux/arm64 --push --tag ghcr.io/dkapanidis/echo-server .
 
 docker.inspect: ## Inspect remote image
-	docker buildx imagetools inspect dkapanidis/echo-server
+	docker buildx imagetools inspect ghcr.io/dkapanidis/echo-server
 
 clean: ## Clean generated files
 	rm -f echo-server.*

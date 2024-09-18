@@ -33,7 +33,7 @@ Build all docker images
 ```sh
 $ docker buildx create --use
 $ make docker.build
-docker buildx build --platform linux/amd64,linux/arm64 --tag dkapanidis/echo-server .
+docker buildx build --platform linux/amd64,linux/arm64 --tag ghcr.io/dkapanidis/echo-server .
 ...
 ```
 

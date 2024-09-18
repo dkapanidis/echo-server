@@ -30,7 +30,7 @@ spec:
                       - arm64
       containers:
       - name: echo-server
-        image: dkapanidis/echo-server
+        image: ghcr.io/dkapanidis/echo-server
         ports:
         - containerPort: 5678
 
