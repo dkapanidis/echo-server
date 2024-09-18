@@ -26,4 +26,3 @@ go.work.sum
 
 
 echo-server.*
-dist/
