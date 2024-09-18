@@ -1,0 +1,10 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: echo-server
+spec:
+  defaultBackend:
+    service:
+      name: echo-server
+      port:
+        number: 5678
